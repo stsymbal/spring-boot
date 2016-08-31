@@ -184,7 +184,7 @@ limitations under the License.
 		})();
 
 		Game.connect = (function() {
-			Game.socket = new SockJS("/snake");
+			Game.socket = new SockJS(location.pathname.substr(0, location.pathname.lastIndexOf('/')) + "/snake");
 
 			Game.socket.onopen = function () {
 				// Socket open.. start the game loop.

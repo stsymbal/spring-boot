@@ -60,7 +60,7 @@ limitations under the License.
 		}
 
 		function connect() {
-			var target = document.getElementById('target').value;
+			var target = location.pathname.substr(0, location.pathname.lastIndexOf('/')) + document.getElementById('target').value;
 			ws = new WebSocket(target);
 			ws.onopen = function () {
 				setConnected(true);
@@ -77,9 +77,9 @@ limitations under the License.
 
 		function updateTarget() {
 			if (window.location.protocol == 'http:') {
-				document.getElementById('target').value = 'ws://' + window.location.host + document.getElementById('target').value;
+				document.getElementById('target').value = 'ws://' + window.location.host + location.pathname.substr(0, location.pathname.lastIndexOf('/')) + document.getElementById('target').value;
 			} else {
-				document.getElementById('target').value = 'wss://' + window.location.host + document.getElementById('target').value;
+				document.getElementById('target').value = 'wss://' + window.location.host + location.pathname.substr(0, location.pathname.lastIndexOf('/')) + document.getElementById('target').value;
 			}
 		}
 

@@ -11,6 +11,7 @@
 	<name>Spring Boot WebSocket Tomcat Sample</name>
 	<description>Spring Boot WebSocket Tomcat Sample</description>
 	<url>http://projects.spring.io/spring-boot/</url>
+	<packaging>war</packaging>
 	<organization>
 		<name>Pivotal Software, Inc.</name>
 		<url>http://www.spring.io</url>
@@ -23,6 +24,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-websocket</artifactId>
 		</dependency>
+	        <dependency>
+	            <groupId>org.springframework.boot</groupId>
+      	            <artifactId>spring-boot-starter-tomcat</artifactId>
+        	    <scope>provided</scope>
+     		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
